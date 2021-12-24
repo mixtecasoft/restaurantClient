@@ -64,6 +64,16 @@ export const Navbar = ({ toggle }) => {
                            COCTELERIA
                         </NavLinks>
                         <NavLinks
+                           to="otros"
+                           smooth={true}
+                           duration={500}
+                           spy={true}
+                           exact="true"
+                           offset={-80}
+                        >
+                           POSTRES & BOTANAS
+                        </NavLinks>
+                        <NavLinks
                            to="camarones"
                            smooth={true}
                            duration={500}
@@ -94,16 +104,7 @@ export const Navbar = ({ toggle }) => {
                         >
                            BEBIDAS
                         </NavLinks>
-                        <NavLinks
-                           to="otros"
-                           smooth={true}
-                           duration={500}
-                           spy={true}
-                           exact="true"
-                           offset={-80}
-                        >
-                           OTROS
-                        </NavLinks>
+
                         <NavLinks
                            to="reserva"
                            smooth={true}

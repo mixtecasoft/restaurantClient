@@ -19,6 +19,9 @@ export const Sidebar = ({ isOpen, toggle }) => {
                <SidebarLink to="cocteleria" onClick={toggle}>
                   Coctelería
                </SidebarLink>
+               <SidebarLink to="otros" onClick={toggle}>
+                  Postres & Botanas
+               </SidebarLink>
                <SidebarLink to="camarones" onClick={toggle}>
                   Camarónes
                </SidebarLink>
@@ -29,9 +32,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
                <SidebarLink to="bebidas" onClick={toggle}>
                   Bebidas
                </SidebarLink>
-               <SidebarLink to="otros" onClick={toggle}>
-                  Otros
-               </SidebarLink>
+
                <SidebarLink to="reserva" onClick={toggle}>
                   Palapa
                </SidebarLink>
