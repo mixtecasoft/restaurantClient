@@ -6,8 +6,6 @@ import {
    SidebarWrapper,
    SidebarMenu,
    SidebarLink,
-   SideBtnWrap,
-   SidebarRoute,
 } from "./SidebarElements";
 
 export const Sidebar = ({ isOpen, toggle }) => {
@@ -18,25 +16,29 @@ export const Sidebar = ({ isOpen, toggle }) => {
          </Icon>
          <SidebarWrapper>
             <SidebarMenu>
+               <SidebarLink to="cocteleria" onClick={toggle}>
+                  Coctelería
+               </SidebarLink>
                <SidebarLink to="camarones" onClick={toggle}>
                   Camarónes
                </SidebarLink>
                <SidebarLink to="pescados" onClick={toggle}>
                   Pescados
                </SidebarLink>
-               <SidebarLink to="cocteleria" onClick={toggle}>
-                  Coctelería
-               </SidebarLink>
+
                <SidebarLink to="bebidas" onClick={toggle}>
                   Bebidas
                </SidebarLink>
+               <SidebarLink to="otros" onClick={toggle}>
+                  Otros
+               </SidebarLink>
                <SidebarLink to="reserva" onClick={toggle}>
-                  Reserva
+                  Palapa
                </SidebarLink>
             </SidebarMenu>
-            <SideBtnWrap>
+            {/* <SideBtnWrap>
                <SidebarRoute to="/order">Realizar Pedido</SidebarRoute>
-            </SideBtnWrap>
+            </SideBtnWrap> */}
          </SidebarWrapper>
       </SidebarContainer>
    );

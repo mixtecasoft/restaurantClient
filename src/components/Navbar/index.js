@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
@@ -6,14 +7,15 @@ import { animateScroll as scroll } from "react-scroll";
 import {
    Nav,
    NavbarContainer,
-   NavLogo,
    MobileIcon,
    NavMenu,
    NavItem,
    NavLinks,
-   NavBtn,
-   NavBtnLink,
+   SocialMedia,
+   SocialMediaWrap,
+   SocialIcons,
 } from "./NavbarElements";
+
 export const Navbar = ({ toggle }) => {
    const [scrollNav, setScrollNav] = useState(false);
 
@@ -38,14 +40,29 @@ export const Navbar = ({ toggle }) => {
          <IconContext.Provider value={{ color: "#fff" }}>
             <Nav scrollNav={scrollNav}>
                <NavbarContainer>
-                  <NavLogo to="/" onClick={toggleHome}>
-                     Los Cachimbos
-                  </NavLogo>
                   <MobileIcon onClick={toggle}>
                      <FaBars />
                   </MobileIcon>
+                  <SocialMedia>
+                     <SocialMediaWrap>
+                        <SocialIcons>
+                           <FaWhatsapp onClick={toggleHome} />
+                           953 593 7613
+                        </SocialIcons>
+                     </SocialMediaWrap>
+                  </SocialMedia>
                   <NavMenu>
                      <NavItem>
+                        <NavLinks
+                           to="cocteleria"
+                           smooth={true}
+                           duration={500}
+                           spy={true}
+                           exact="true"
+                           offset={-80}
+                        >
+                           COCTELERIA
+                        </NavLinks>
                         <NavLinks
                            to="camarones"
                            smooth={true}
@@ -66,16 +83,7 @@ export const Navbar = ({ toggle }) => {
                         >
                            PESCADOS
                         </NavLinks>
-                        <NavLinks
-                           to="cocteleria"
-                           smooth={true}
-                           duration={500}
-                           spy={true}
-                           exact="true"
-                           offset={-80}
-                        >
-                           COCTELERIA
-                        </NavLinks>
+
                         <NavLinks
                            to="bebidas"
                            smooth={true}
@@ -87,6 +95,16 @@ export const Navbar = ({ toggle }) => {
                            BEBIDAS
                         </NavLinks>
                         <NavLinks
+                           to="otros"
+                           smooth={true}
+                           duration={500}
+                           spy={true}
+                           exact="true"
+                           offset={-80}
+                        >
+                           OTROS
+                        </NavLinks>
+                        <NavLinks
                            to="reserva"
                            smooth={true}
                            duration={500}
@@ -94,12 +112,13 @@ export const Navbar = ({ toggle }) => {
                            exact="true"
                            offset={-80}
                         >
-                           RESERVA
+                           PALAPA
                         </NavLinks>
                      </NavItem>
-                     <NavBtn>
+
+                     {/* <NavBtn>
                         <NavBtnLink to="/order">Realizar Pedido</NavBtnLink>
-                     </NavBtn>
+                     </NavBtn> */}
                   </NavMenu>
                </NavbarContainer>
             </Nav>

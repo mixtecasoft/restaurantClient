@@ -4,7 +4,7 @@ import InfoSection from "../../components/InfoSection";
 import { homeObjTwo } from "../../components/InfoSection/Data";
 import Navbar from "../../components/Navbar";
 import Menu from "../../components/Menu";
-import { dark, light } from "../../components/Menu/data";
+import { dark, light } from "../../components/Menu/MenuElements";
 import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 
@@ -17,6 +17,7 @@ const Home = () => {
    const [pescados, setPescados] = useState([]);
    const [cocteleria, setCocteleria] = useState([]);
    const [bebidas, setBebidas] = useState([]);
+   const [otros, setOtros] = useState([]);
 
    const getMenus = async () => {
       db.collection("menus").onSnapshot((querySnapshot) => {
@@ -25,20 +26,24 @@ const Home = () => {
          const pescados = [];
          const cocteleria = [];
          const bebidas = [];
+         const otros = [];
          querySnapshot.forEach((doc) => {
             docs.push({ ...doc.data(), id: doc.id });
             switch (doc.data().section) {
-               case "camarones":
+               case "Camarones":
                   camarones.push({ ...doc.data(), id: doc.id });
                   break;
-               case "pescados":
+               case "Pescados":
                   pescados.push({ ...doc.data(), id: doc.id });
                   break;
-               case "cocteleria":
+               case "Cocteleria":
                   cocteleria.push({ ...doc.data(), id: doc.id });
                   break;
-               case "bebidas":
+               case "Bebidas":
                   bebidas.push({ ...doc.data(), id: doc.id });
+                  break;
+               case "Otros":
+                  otros.push({ ...doc.data(), id: doc.id });
                   break;
                default:
                   console.log("No section found");
@@ -49,6 +54,7 @@ const Home = () => {
          setPescados(pescados);
          setCocteleria(cocteleria);
          setBebidas(bebidas);
+         setOtros(otros);
       });
    };
 
@@ -66,6 +72,12 @@ const Home = () => {
          <Navbar toggle={toggle} />
          <HeroSection />
          <Menu
+            heading="Coctelería"
+            data={cocteleria}
+            props={dark}
+            id={"cocteleria"}
+         />
+         <Menu
             heading="Camarónes"
             data={camarones}
             props={dark}
@@ -77,13 +89,8 @@ const Home = () => {
             props={light}
             id={"pescados"}
          />
-         <Menu
-            heading="Coctelería"
-            data={cocteleria}
-            props={dark}
-            id={"cocteleria"}
-         />
          <Menu heading="Bebidas" data={bebidas} props={light} id={"bebidas"} />
+         <Menu heading="Otros" data={otros} props={dark} id={"otros"} />
          <InfoSection {...homeObjTwo} />
          <Footer />
       </>

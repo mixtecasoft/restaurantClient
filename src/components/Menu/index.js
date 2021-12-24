@@ -9,10 +9,7 @@ import {
    ProductInfo,
    ProductDesc,
    ProductPrice,
-   HeroBtnWrapper,
-} from "./ProductsElements";
-
-import { Button } from "../ButtonElements";
+} from "./MenuElements";
 
 const Menu = ({ heading, data, props, id }) => {
    return (
@@ -35,11 +32,11 @@ const Menu = ({ heading, data, props, id }) => {
                         <ProductPrice lightBg={props.lightBg}>
                            ${product.price}
                         </ProductPrice>
-                        <HeroBtnWrapper>
+                        {/* <HeroBtnWrapper>
                            <Button primary="true" dark="true">
                               Agregar al pedido
                            </Button>
-                        </HeroBtnWrapper>
+                        </HeroBtnWrapper> */}
                      </ProductInfo>
                   </ProductCard>
                ) : (

@@ -1,49 +1,51 @@
 import React from "react";
-import { Button } from "../ButtonElements";
+// import { Button } from "../ButtonElements";
 import {
-  InfoContainer,
-  InfoWrapper,
-  InfoRow,
-  Column1,
-  Column2,
-  TextWrapper,
-  TopLine,
-  Heading,
-  Subtitle,
-  BtnWrap,
-  ImgWrap,
-  Img,
+   InfoContainer,
+   InfoWrapper,
+   InfoRow,
+   Column1,
+   Column2,
+   TextWrapper,
+   TopLine,
+   Heading,
+   Subtitle,
+   BtnWrap,
+   ImgWrap,
+   Img,
 } from "./InfoElements";
 
 const InfoSection = ({
-  lightBg,
-  id,
-  imgStart,
-  topLine,
-  lightText,
-  headline,
-  darkText,
-  description,
-  buttonLabel,
-  img,
-  alt,
-  primary,
-  dark,
-  dark2,
+   lightBg,
+   id,
+   imgStart,
+   topLine,
+   lightText,
+   headline,
+   darkText,
+   description,
+   buttonLabel,
+   img,
+   alt,
+   primary,
+   dark,
+   dark2,
 }) => {
-  return (
-    <>
-      <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
-          <InfoRow imgStart={imgStart}>
-            <Column1>
-              <TextWrapper>
-                <TopLine>
-                  <TopLine>{topLine}</TopLine>
-                  <Heading lightText={lightText}>{headline}</Heading>
-                  <Subtitle darkText={darkText}>{description}</Subtitle>
-                  <BtnWrap>
-                    <Button
+   return (
+      <>
+         <InfoContainer lightBg={lightBg} id={id}>
+            <InfoWrapper>
+               <InfoRow imgStart={imgStart}>
+                  <Column1>
+                     <TextWrapper>
+                        <TopLine>
+                           <TopLine>{topLine}</TopLine>
+                           <Heading lightText={lightText}>{headline}</Heading>
+                           <Subtitle darkText={darkText}>
+                              {description}
+                           </Subtitle>
+                           <BtnWrap>
+                              {/* <Button
                       to="home"
                       dark={dark ? 1 : 0}
                       dark2={dark2 ? 1 : 0}
@@ -55,21 +57,21 @@ const InfoSection = ({
                       offset={-80}
                     >
                       {buttonLabel}
-                    </Button>
-                  </BtnWrap>
-                </TopLine>
-              </TextWrapper>
-            </Column1>
-            <Column2>
-              <ImgWrap>
-                <Img src={img} alt={alt} />
-              </ImgWrap>
-            </Column2>
-          </InfoRow>
-        </InfoWrapper>
-      </InfoContainer>
-    </>
-  );
+                    </Button> */}
+                           </BtnWrap>
+                        </TopLine>
+                     </TextWrapper>
+                  </Column1>
+                  <Column2>
+                     <ImgWrap>
+                        <Img src={img} alt={alt} />
+                     </ImgWrap>
+                  </Column2>
+               </InfoRow>
+            </InfoWrapper>
+         </InfoContainer>
+      </>
+   );
 };
 
 export default InfoSection;
