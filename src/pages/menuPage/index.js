@@ -78,6 +78,12 @@ const Home = () => {
             id={"cocteleria"}
          />
          <Menu
+            heading="Postres & Botanas"
+            data={otros}
+            props={dark}
+            id={"otros"}
+         />
+         <Menu
             heading="Camarónes"
             data={camarones}
             props={dark}
@@ -90,7 +96,6 @@ const Home = () => {
             id={"pescados"}
          />
          <Menu heading="Bebidas" data={bebidas} props={light} id={"bebidas"} />
-         <Menu heading="Otros" data={otros} props={dark} id={"otros"} />
          <InfoSection {...homeObjTwo} />
          <Footer />
       </>
